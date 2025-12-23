@@ -27,8 +27,6 @@ Key highlights:
 
 > ✅ **Status**: The model is fully **trained and fine-tuned** with **99% accuracy** on the test set. It is ready for deployment.
 
-> ⚠️ **Disclaimer**: This project is for **educational purposes only**. Not intended for clinical diagnosis.
-
 ---
 
 ## 📊 Dataset
