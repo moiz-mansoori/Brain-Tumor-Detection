@@ -7,7 +7,6 @@ A **production-quality** Machine Learning project that detects brain tumors from
 ![OpenCV](https://img.shields.io/badge/OpenCV-4.7+-green.svg)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-red.svg)
 ![Model Status](https://img.shields.io/badge/Model-Custom_Trained_%26_Fine--Tuned-brightgreen)
-![Accuracy](https://img.shields.io/badge/Accuracy-99%25-success)
 
 ---
 
