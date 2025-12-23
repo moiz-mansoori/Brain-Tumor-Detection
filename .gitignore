@@ -1,0 +1,77 @@
+# Brain Tumor Detection - Git Ignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+
+# Data files (too large for git)
+data/raw/
+data/splits/
+data/processed/
+Dataset/
+
+# Trained models (too large for git)
+saved_models/*.h5
+saved_models/*.keras
+*.h5
+*.keras
+
+# Logs
+logs/
+*.log
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment variables
+.env
+.env.local
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Reports (regenerated)
+reports/*.json
+
+# Keep these directories but ignore contents
+!data/.gitkeep
+!saved_models/.gitkeep
+!reports/.gitkeep
