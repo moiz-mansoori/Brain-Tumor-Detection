@@ -68,14 +68,30 @@ def crop_brain_region(image: np.ndarray) -> tuple:
 # ==================== MODEL LOADING ====================
 @st.cache_resource
 def load_model():
-    """Load the trained model (cached)."""
+    """Load the trained model (cached). Downloads from Hugging Face if not local."""
     try:
         import tensorflow as tf
+        
+        # First check if model exists locally
         if MODEL_PATH.exists():
             model = tf.keras.models.load_model(str(MODEL_PATH))
             return model, None
-        else:
-            return None, f"Model not found at: {MODEL_PATH}"
+        
+        # Try to download from Hugging Face Hub
+        try:
+            from src.utils.model_downloader import ensure_model_available
+            
+            with st.spinner("📥 Downloading model from Hugging Face Hub (first time only)..."):
+                downloaded_path = ensure_model_available()
+            
+            if downloaded_path and downloaded_path.exists():
+                model = tf.keras.models.load_model(str(downloaded_path))
+                return model, None
+            else:
+                return None, "Failed to download model from Hugging Face Hub"
+        except ImportError as ie:
+            return None, f"Model not found locally and huggingface_hub not installed: {ie}"
+            
     except Exception as e:
         return None, str(e)
 
