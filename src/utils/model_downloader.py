@@ -48,23 +48,26 @@ def download_model_from_hf(
         
         print(f"📥 Downloading model from Hugging Face: {repo_id}/{filename}")
         
-        # Download to cache first, then we'll use directly from cache
+        # Ensure the directory exists
+        local_path.parent.mkdir(parents=True, exist_ok=True)
+        
+        # Download using hf_hub_download - simplest approach
         downloaded_path = hf_hub_download(
             repo_id=repo_id,
             filename=filename,
-            cache_dir=str(local_path.parent),
             local_dir=str(local_path.parent),
-            local_dir_use_symlinks=False
         )
         
-        print(f"✅ Model downloaded successfully!")
+        print(f"✅ Model downloaded successfully to: {downloaded_path}")
         return Path(downloaded_path)
         
-    except ImportError:
-        print("❌ huggingface_hub not installed. Install with: pip install huggingface-hub")
+    except ImportError as e:
+        print(f"❌ huggingface_hub not installed: {e}")
         return None
     except Exception as e:
         print(f"❌ Failed to download model: {e}")
+        import traceback
+        traceback.print_exc()
         return None
 
 
