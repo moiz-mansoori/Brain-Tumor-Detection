@@ -1,6 +1,6 @@
 # 🧠 Brain Tumor Detection using ML, CNN & Computer Vision
 
-A well-structured machine learning project that detects brain tumors from MRI images using a fine-tuned VGG-16 model, with automated brain region extraction applied before classification to improve reliability.
+This is a practical machine learning project that detects brain tumors from MRI scans. It combines automated brain region extraction using computer vision with a fine-tuned VGG-16 convolutional neural network to classify images as tumor or non-tumor. The project includes preprocessing, training, evaluation, explainability, and a Streamlit demo app.
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.10+-orange.svg)
