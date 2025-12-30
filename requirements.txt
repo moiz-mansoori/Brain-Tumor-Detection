@@ -3,9 +3,8 @@
 # Deep Learning
 tensorflow>=2.10.0
 
-# Computer Vision
-opencv-python>=4.7.0
-opencv-python-headless>=4.7.0 # Required for Streamlit Cloud
+# Computer Vision (headless for Streamlit Cloud)
+opencv-python-headless>=4.7.0
 
 # Data Processing
 numpy>=1.23.0
