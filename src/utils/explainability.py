@@ -92,8 +92,8 @@ def generate_gradcam(
 
     # 4. Gradient computation in Tape
     with tf.GradientTape() as tape:
-        tape.watch(conv_outputs) # Explicitly watch conv activations
         conv_outputs, base_output = sub_grad_model(img_tensor, training=False)
+        tape.watch(conv_outputs)  # Explicitly watch conv activations (MUST be after definition)
         
         x = base_output
         for layer in post_layers:

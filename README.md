@@ -1,6 +1,6 @@
 # 🧠 Brain Tumor Detection using ML, CNN & Computer Vision
 
-A **production-quality** Machine Learning project that detects brain tumors from MRI images using VGG-16 deep learning with automated brain region extraction.
+A well-structured machine learning project that detects brain tumors from MRI images using a fine-tuned VGG-16 model, with automated brain region extraction applied before classification to improve reliability.
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.10+-orange.svg)
@@ -56,7 +56,15 @@ VGG-16 Base (ImageNet) → GlobalAvgPool → BatchNorm → Dense(256, ReLU) → 
 ```
 
 ### 🧠 Explainability (Grad-CAM)
-This project features a custom **Grad-CAM** implementation in `src/utils/explainability.py`. It visualizes the model's focus regions by generating heatmaps, helping to validate the "why" behind each prediction—a critical step in medical AI trust.
+
+This project features a robust **Grad-CAM** (Gradient-weighted Class Activation Mapping) implementation in `src/utils/explainability.py`:
+
+- ✅ **Heatmap Generation**: Visualizes which regions the CNN focuses on for predictions
+- ✅ **Overlay Visualization**: Blends heatmap with original MRI for intuitive interpretation
+- ✅ **Multi-class Support**: Works with all 4 tumor classes
+- ✅ **Medical AI Trust**: Helps validate model decisions align with actual tumor locations
+
+> Enable Grad-CAM in the Streamlit app via the sidebar checkbox to see model explainability in action.
 
 ---
 
