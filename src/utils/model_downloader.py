@@ -11,7 +11,7 @@ from typing import Optional
 
 
 # Configuration - Update this after uploading to Hugging Face
-HUGGINGFACE_REPO_ID = "moiz-mansoori/brain-tumor-vgg16"  # Your HF username/repo-name
+HUGGINGFACE_REPO_ID = "moizmansoori/brain-tumor-vgg16"  # Your HF username/repo-name
 MODEL_FILENAME = "vgg16_brain_tumor_4class.h5"
 
 
